@@ -19,7 +19,7 @@ Keeps these installed and up to date:
 ## Install on a new machine
 
 ```bash
-git clone <this-repo-url> sync-extensions
+git clone https://github.com/MymiK98/sync-extensions.git
 cd sync-extensions
 bash bootstrap.sh
 ```
