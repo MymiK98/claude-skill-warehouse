@@ -41,7 +41,8 @@ skill run `/sync-extensions` (or `bash bootstrap.sh`) to install its payload
    - Author one fast with the bundled **skill-creator** plugin, then move the
      result into `skills/`. See `templates/example-skill/` for a minimal layout.
 2. `bash install.sh add <name>` — link it into `~/.claude/skills` to use it.
-3. `bash publish.sh "feat: add <name>"` — commit + push to git.
+3. Commit it: `git add -A && git commit -m "feat: add <name>" && git push`
+   (only the repo owner has write access).
 
 On another machine: `git pull`, then `bash install.sh add <name>` (or
 `bash bootstrap.sh` for everything).
@@ -74,7 +75,7 @@ warehouse entries):
 | `vercel-labs/skills` | find-skills | standalone |
 
 To change the payload, edit `skills/sync-extensions/manifest.json`, run
-`/sync-extensions`, then `bash publish.sh`.
+`/sync-extensions`, then commit with git (owner only).
 
 ### Basic setup the sync performs
 - **caveman**: idempotent hook installer (SessionStart + UserPromptSubmit hooks,
@@ -91,7 +92,6 @@ claude-skill-warehouse/
 ├── README.md
 ├── bootstrap.sh        # fresh machine: install all warehouse skills + setup
 ├── install.sh          # pick & install/remove individual stored skills
-├── publish.sh          # refresh seeds from live + commit + push
 ├── bin/catalog.py      # warehouse catalog + install-status engine
 ├── skills/             # ← MY skills (the warehouse)
 │   └── sync-extensions/{SKILL.md,manifest.json,scripts/sync.sh}

@@ -3,5 +3,8 @@
 *.swp
 *~
 
+# owner-only publish tool — kept local, not distributed
+publish.sh
+
 # never commit a machine-specific lock backup
-agents-seed/.skill-lock.json.bak
+seeds/agents/.skill-lock.json.bak
